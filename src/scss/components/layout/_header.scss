@@ -1,0 +1,13 @@
+.header {
+  position: relative;
+  @extend %picture-inside;
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $content;
+    padding: 1.438rem 1.625rem;
+  }
+}

@@ -1,0 +1,20 @@
+@mixin double-border($border-width, $offset, $color, $fill) {
+  border: $border-width solid $color;
+  @if $fill == true {
+    background-color: $color;
+  }
+
+	&:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $offset;
+    left: $offset;
+    right: -($border-width * 2 + $offset);
+    bottom: -($border-width * 2 + $offset);
+    border: $border-width solid $color;
+    @if $fill == true {
+      background-color: $color;
+    }
+  }
+}

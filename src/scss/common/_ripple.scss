@@ -1,0 +1,17 @@
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-ink {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: scale(0);
+
+  &_animate {
+    animation-name: ripple;
+    animation-duration: .45s;
+  }
+}

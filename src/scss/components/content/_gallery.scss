@@ -1,0 +1,37 @@
+.gallery {
+  &__filter {
+    margin-bottom: 3rem;
+  }
+
+  &__layout {
+    margin-bottom: -1.5rem;
+    @extend %picture-inside;
+
+    @include bp(mobile-land) {
+      column-count: 2;
+      column-gap: 1.5rem;
+      perspective: 1px;
+    }
+
+    @include bp(tablet-land) {
+      column-count: 3;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    max-height: 0;
+    overflow: hidden;
+    left: -100%;
+    transform: scale(0);
+    transition: transform .3s cubic-bezier(.24, .15, .78, 1.1), max-height 0s linear .3s;
+
+    &_show {
+      max-height: 999px;
+      margin-bottom: 1.5rem;
+      transform: scale(1);
+      transition: transform .3s linear, max-height 0s linear;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.site-logo {
+  float: left;
+  width: $brand-tablet;
+  padding: 23px 8px 13px 18px;
+  position: relative;
+  will-change: padding;
+  @include double-border(3px, 4px, $white, false);
+
+  @include bp(tablet-land) {
+    padding: 33px 18px 23px 28px;
+    width: $brand-desktop;
+  }
+
+  &:hover,
+  &:focus {
+    padding: 13px 18px 23px 8px;
+    border-color: $indigo;
+
+    @include bp(tablet-land) {
+      padding: 23px 28px 33px 18px;
+    }
+
+    &:after {
+      top: -10px;
+      left: -10px;
+      right: 4px;
+      bottom: 4px;
+      border-color: $indigo;
+    }
+  }
+}

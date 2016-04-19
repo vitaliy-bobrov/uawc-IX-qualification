@@ -1,0 +1,13 @@
+.container {
+	width: 96%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include bp(tablet-land) {
+		width: 83%; // 100% - 8.5% * 2 - 10 cols.
+	}
+
+	@include bp(large-desktop) {
+		width: 1270px;
+	}
+}

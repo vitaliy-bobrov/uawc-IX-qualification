@@ -1,0 +1,72 @@
+.hero-partial {
+  position: relative;
+  @extend %picture-inside;
+
+  &_reverse-on-mobile {
+    order: -1;
+
+    @include bp(tablet) {
+      order: 3;
+    }
+  }
+
+  &__background {
+    display: block;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 1rem 1.75rem 1rem 1.75rem;
+    font-size: 2.65rem;
+    line-height: 3rem;
+    text-align: center;
+    color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include double-border(3px, 4px, $white, false);
+
+    @include bp(fablet) {
+      padding: 1.5rem 2.125rem 1.438rem 2.25rem;
+    }
+
+    @include bp(mobile-land) {
+      font-size: 3.65rem;
+      line-height: 4rem;
+    }
+
+    @include bp(desktop) {
+      font-size: 4.063rem;
+      line-height: 5.375rem;
+      padding: 24px 34px 23px 36px;
+    }
+
+    &_single {
+      width: 90%;
+
+      @include bp(mobile-land) {
+        width: 86%;
+      }
+
+      @include bp(desktop) {
+        width: 80.756%;
+      }
+    }
+
+    &_multi {
+      width: 80%;
+      height: 80%;
+      @extend %v-align;
+
+      @include bp(tablet) {
+        width: 65.95%;
+        height: 76.375%;
+      }
+    }
+  }
+}

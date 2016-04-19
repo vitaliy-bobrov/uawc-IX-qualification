@@ -1,0 +1,13 @@
+.link {
+  color: $mirage;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $indigo;
+  }
+
+  &_long-shadow {
+    @include long-shadow(17, .7, 244, 244, 244, false, 2);
+  }
+}

@@ -1,0 +1,98 @@
+.content-section {
+  margin-bottom: $offset-mobile;
+  background-color: $white;
+
+  &:first-of-type {
+    margin-top: $offset-mobile;
+
+    @include bp(tablet) {
+      margin-top: $offset-tablet;
+    }
+
+    @include bp(desktop) {
+      margin-top: $offset-desktop;
+    }
+  }
+
+  @include bp(tablet) {
+    margin-bottom: $offset-tablet;
+  }
+
+  @include bp(desktop) {
+    margin-bottom: $offset-desktop;
+  }
+
+  &_default-offset {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include bp(tablet-land) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+
+    @include bp(desktop) {
+      padding-top: 8.313rem;
+      padding-bottom: 8.313rem;
+    }
+  }
+
+  &_transparent {
+    background-color: transparent;
+  }
+
+  &_gradient {
+    background: linear-gradient(to right, #f3f3f3 0%, #ffffff 92%);
+  }
+
+  &_stacked {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include bp(tablet-land) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &_animate-onscroll {
+    overflow-x: hidden;
+  }
+
+  &__title {
+    margin: 0 0 3.5rem;
+    text-align: center;
+
+    @include bp(desktop) {
+      margin-bottom: 3.438rem;
+    }
+
+    &_hidden {
+      @extend %visually-hidden;
+    }
+
+    &_sm {
+      font-size: 2.375rem;
+      line-height: 1.75rem;
+    }
+
+    &_long-shadow {
+      @include long-shadow(17, .75, 241, 241, 241, false, 2);
+    }
+
+    &_long-shadow-xl {
+      @include long-shadow(44, .3, 244, 244, 244, true, .2);
+
+      @include bp(desktop) {
+        @include long-shadow(55, .3, 244, 244, 244, true, .2);
+      }
+    }
+  }
+
+  &__partial {
+    flex-basis: 100%;
+
+    @include bp(tablet-land) {
+      flex-basis: 50%;
+    }
+  }
+}

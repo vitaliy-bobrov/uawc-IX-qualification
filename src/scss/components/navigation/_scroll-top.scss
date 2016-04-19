@@ -1,0 +1,26 @@
+.scroll-top {
+  display: block;
+  width: 2.438rem;
+  height: 2.438rem;
+  font-size: 0;
+  line-height: 0;
+  background: $mirage resolve('icons/arrow.svg') no-repeat center / 13px auto;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+
+  @include bp(fablet) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include bp(mobile-land) {
+    right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $indigo;
+  }
+}

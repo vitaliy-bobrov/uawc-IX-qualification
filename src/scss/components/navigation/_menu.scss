@@ -1,0 +1,55 @@
+.menu {
+  position: absolute;
+  top: 96px;
+  right: 38px;
+  z-index: $menu;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 100% 0;
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1),
+      opacity .2s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 2px 2px 0 rgba($mirage, .14),
+              0 3px 1px -2px rgba($mirage, .2),
+              0 1px 5px 0 rgba($mirage, .12);
+
+  @include bp(mobile-land) {
+    top: 92px;
+    right: 68px;
+  }
+
+  @include bp(tablet-land) {
+    top: 138px;
+    right: 100px;
+    box-shadow: 0 2px 2px 0 rgba($white, .14),
+                0 3px 1px -2px rgba($white, .2),
+                0 1px 5px 0 rgba($white, .12);
+  }
+
+  &_open {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 3px 15px 5px;
+    list-style: none;
+    background-color: $white;
+  }
+
+  &__item {
+    display: block;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $mirage;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 12px 5px 14px;
+    @include long-shadow(12, .7, 244, 244, 244, false, 1);
+  }
+}

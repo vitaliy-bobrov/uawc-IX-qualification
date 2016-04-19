@@ -1,0 +1,62 @@
+.socials {
+  margin-bottom: 2rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+  line-height: 0;
+
+  @include bp(tablet-land) {
+    margin-bottom: 5px;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    max-height: 35px;
+
+    &:not(:last-of-type) {
+      margin-right: 1.5rem;
+
+      @include bp(tablet-land) {
+        margin-right: 4px;
+      }
+    }
+
+    &:first-of-type {
+      .socials__link {
+        margin-left: -10px;
+
+        @include bp(tablet-land) {
+          margin-left: -5px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    max-height: 35px;
+    padding: 10px;
+
+    @include bp(tablet-land) {
+      padding: 10px 5px;
+    }
+
+    &:hover,
+    &:focus {
+      .socials__icon {
+        fill: $indigo;
+      }
+    }
+  }
+
+  &__icon {
+    width: 15px;
+    fill: $mirage;
+    transition: all .45s linear;
+
+    &_facebook {
+      width: 14px;
+    }
+  }
+}

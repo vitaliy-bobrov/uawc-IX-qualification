@@ -1,0 +1,124 @@
+.news {
+  font-size: 0;
+
+  &__article {
+    margin-bottom: 4rem;
+
+    @include bp(tablet) {
+      display: inline-block;
+      vertical-align: top;
+      width: 45%;
+      margin-bottom: 3rem;
+    }
+
+    @include bp(tablet-land) {
+      width: 30%;
+      margin-bottom: 0;
+    }
+
+    @include bp(desktop) {
+      width: calc(33.33% - 16.66px);
+    }
+
+    &:not(:last-of-type) {
+      @include bp(tablet) {
+        margin-right: 5%;
+      }
+
+      @include bp(desktop) {
+        margin-right: 24.5px;
+      }
+    }
+  }
+}
+
+.news-article {
+  color: $dove;
+
+  &__img-link {
+    display: block;
+    margin-bottom: 1.125rem;
+    @extend %picture-inside;
+
+    &:hover,
+    &:focus {
+      filter: grayscale(.8);
+    }
+  }
+
+  &__author,
+  &__date {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 1.188rem;
+    padding-left: 24px;
+    font-family: $arial;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: .0625rem;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__author {
+    margin-top: 0;
+    margin-right: 2rem;
+
+    @include bp(desktop) {
+      margin-right: 2.188rem;
+    }
+
+    &:before {
+      width: 15px;
+      height: 13px;
+      background-image: resolve('icons/author-icon.svg');
+    }
+  }
+
+  &__date {
+    &:before {
+      width: 13px;
+      height: 13px;
+      background-image: resolve('icons/date-icon.svg');
+    }
+  }
+
+  &__title {
+    margin: 0 0 .75rem;
+    font-size: 14px;
+    line-height: 14px;
+
+    @include bp(desktop) {
+      line-height: 11px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 .75rem;
+    font-family: $arial;
+    font-size: 14px;
+    line-height: 1.438rem;
+    letter-spacing: .0625rem;
+
+    @include bp(desktop) {
+      margin-bottom: 1.063rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: -17px;
+    padding: 17px 0;
+    font-size: 13px;
+    color: $dusty;
+  }
+}

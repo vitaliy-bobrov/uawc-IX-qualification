@@ -1,0 +1,43 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-size: 12px;
+
+  @include bp(tablet) {
+    font-size: 13px;
+  }
+
+  @include bp(tablet-land) {
+    font-size: 14px;
+  }
+
+  @include bp(desktop) {
+    font-size: 15px;
+  }
+
+  @include bp(large-desktop) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: $baron;
+  line-height: 20px;
+  font-weight: 400;
+  color: $mirage;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba($white, .05);
+  background-color: $concrete;
+  padding: $offset-mobile;
+  scroll-behavior: smooth;
+
+  @include bp(tablet) {
+    padding: $offset-tablet;
+  }
+
+  @include bp(desktop) {
+    padding: $offset-desktop;
+  }
+}

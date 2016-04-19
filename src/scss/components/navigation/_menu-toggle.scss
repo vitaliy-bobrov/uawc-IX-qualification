@@ -1,0 +1,83 @@
+.menu-toggle {
+  float: right;
+  width: $brand-tablet;
+  height: 67px;
+  position: relative;
+  @include double-border(3px, 4px, $alabaster, true);
+
+  @include bp(tablet-land) {
+    width: $brand-desktop;
+    height: 111px;
+  }
+
+  &_open {
+    .menu-toggle__line {
+      &:nth-of-type(1) {
+        top: 30px;
+        transform: rotate(135deg);
+
+        @include bp(tablet-land) {
+          top: 54px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        opacity: 0;
+        transform: translateX(-70%);
+      }
+
+      &:nth-of-type(3) {
+        top: 30px;
+        transform: rotate(-135deg);
+
+        @include bp(tablet-land) {
+          top: 54px;
+        }
+      }
+    }
+  }
+
+  &__line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    left: calc(50% - 10px);
+    z-index: $menu-line;
+    transition: all .25s ease-in-out;
+    background-color: $black;
+
+    @include bp(tablet-land) {
+      width: 30px;
+      left: calc(50% - 15px);
+    }
+
+    &:nth-of-type(1) {
+      top: 24px;
+      transform: rotate(0deg);
+
+      @include bp(tablet-land) {
+        top: 48px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      top: 29px;
+      opacity: 1;
+      transform: translateX(0);
+
+      @include bp(tablet-land) {
+        top: 53px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      top: 34px;
+      transform: rotate(0deg);
+
+      @include bp(tablet-land) {
+        top: 58px;
+      }
+    }
+  }
+}

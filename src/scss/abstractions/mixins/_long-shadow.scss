@@ -1,0 +1,24 @@
+@function generate-long-shadow($offset, $fade, $r, $g, $b, $smooth, $step) {
+  $shadow: 0px 0px rgb($r, $g, $b);
+  $a: 1;
+
+  @for $i from 1 through $offset {
+  	@if $i > $offset * $fade {
+			$r: $r + $step;
+			$g: $g + $step;
+			$b: $b + $step;
+
+      @if $smooth == true {
+        $a: $a - .025;
+      }
+  	}
+
+    $shadow: #{$shadow}, #{$i}px #{$i}px rgba($r, $g, $b, $a);
+  }
+
+  @return $shadow;
+}
+
+@mixin long-shadow($offset, $fade, $r, $g, $b, $smooth, $step) {
+	text-shadow: generate-long-shadow($offset, $fade, $r, $g, $b, $smooth, $step);
+}

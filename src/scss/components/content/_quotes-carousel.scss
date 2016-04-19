@@ -1,0 +1,89 @@
+.quotes-carousel {
+  min-height: 380px;
+  background: resolve('brand/quotes-carousel-bg.png') no-repeat top center;
+
+  @include bp(tablet-land) {
+    min-height: initial;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 29px;
+    height: 21px;
+    position: absolute;
+    top: 12%;
+    left: calc(50% - 14.5px);
+    background: resolve('brand/quote.png') no-repeat top center;
+
+    @include bp(tablet-land) {
+      top: 20%;
+    }
+
+    @include bp(desktop) {
+      top: 27.5%;
+    }
+  }
+
+  &__item {
+    width: 90%;
+    padding: 0 10px;
+    font-family: $arial;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: .125rem;
+    text-align: center;
+    color: $mirage;
+
+    @include bp(fablet) {
+      width: 80%;
+    }
+
+    @include bp(desktop) {
+      width: 60%;
+      min-width: 580px;
+      font-size: 1.313rem;
+      line-height: 2.188rem;
+    }
+  }
+
+  &__controls {
+    bottom: 15%;
+    font-size: 0;
+
+    @include bp(desktop) {
+      bottom: 27.5%;
+    }
+  }
+
+  &__dot {
+    display: inline-block;
+    vertical-align: top;
+    width: 12px;
+    height: 12px;
+    background-color: $alto;
+
+    @include bp(tablet) {
+      width: 8px;
+      height: 8px;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 1.75rem;
+
+      @include bp(tablet) {
+        margin-right: 2rem;
+      }
+    }
+
+    &:hover {
+      background-color: $mirage;
+      border-radius: 50%;
+    }
+
+    &_active {
+      background-color: $black;
+    }
+  }
+}

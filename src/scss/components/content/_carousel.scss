@@ -1,0 +1,46 @@
+.carousel {
+  position: relative;
+
+  &__trigger {
+    @extend %visually-hidden;
+
+    &:checked {
+      + .carousel__item {
+        z-index: $content;
+        opacity: 1;
+      }
+    }
+
+    @for $i from 1 through 4 {
+      &[id="carousel-trigger-#{$i}"]:checked {
+        ~ .carousel__controls {
+          .carousel__dot[for="carousel-trigger-#{$i}"] {
+            background-color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: $under-content;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(.4, 0, .2, 1), z-index 0s linear .4s;
+  }
+
+  &__controls {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__dot {
+    cursor: pointer;
+    transition: all .4s ease-out;
+  }
+}

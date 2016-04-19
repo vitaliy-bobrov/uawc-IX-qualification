@@ -1,0 +1,16 @@
+.label {
+  font-size: 12px;
+  line-height: 12px;
+
+  @include bp(mobile-land) {
+    font-size: 14px;
+  }
+
+  &_long-shadow {
+    @include long-shadow(17, .7, 243, 243, 243, false, 2);
+  }
+
+  &_dark-long-shadow {
+    @include long-shadow(17, .7, 234, 234, 234, false, 2);
+  }
+}
